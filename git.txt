@@ -1,1 +1,8 @@
-Hola GIT  A
+Hola GIT.
+git add .
+git commit -m "Un comentario"
+git push origin master
+git pull origin master
+
+1 2 3 4 5
+1 2 3 4 5 6
