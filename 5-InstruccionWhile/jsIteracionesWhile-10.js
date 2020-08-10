@@ -13,17 +13,55 @@ hasta que el usuario quiera, mostrar:
 function mostrar()
 {
 	//declarar contadores y variables 
-	var respuesta;
-	var numeroIngresado;
+	var respuesta=true;
+	var numero;
+
 	var sumaNegativos=0;
+	var sumaPositivos=0;
+	
+	//PROMEDIOS
+	var promedioPositivos;
+	var promedioNegativos;
 
-	respuesta="si";
+	//CONTADORES
+	var cantidadPositivos=0;
+	var cantidadNegativos=0;
+	var cantidadCeros=0;
+	var cantidadPares=0;
 
-	while(respuesta=="si")
+	while(respuesta)
 	{
-		
-		respuesta=prompt("desea continuar?");
-	}//fin del while
+		do{
+			numero = parseInt(prompt("Ingrese un numero"));
+		}while(isNaN(numero));
+		if(numero > 0){
+			cantidadPositivos++;
+			sumaPositivos += numero;
+			if(numero %2==0){
+				cantidadPares++;
+			}
+		}else{
+			if(numero < 0){
+				cantidadNegativos++;
+				sumaNegativos += numero;
+				if(numero %2==0){
+					cantidadPares++;
+				}
+			}else{
+				cantidadCeros++;
+			}
+		}
 
-	document.write("la suma de negativos es :"+sumaNegativos);
+		respuesta=confirm("desea continuar?");
+	}//fin del while
+	promedioPositivos = sumaPositivos / cantidadPositivos;
+	promedioNegativos = sumaNegativos / cantidadNegativos;
+	document.write("la suma de positivos es :"+sumaPositivos);
+	document.write("<br>la suma de negativos es :"+sumaNegativos);
+	document.write("<br>la cantidad de positivos es :"+cantidadPositivos);
+	document.write("<br>la cantidad de negativos es :"+cantidadNegativos);
+	document.write("<br>la cantidad de ceros es :"+cantidadCeros);
+	document.write("<br>la cantidad de pares es :"+cantidadPares);
+	document.write("<br>promedio de positivos es :"+promedioPositivos);
+	document.write("<br>promedio de negativos es :"+promedioNegativos);
 }//FIN DE LA FUNCIÓN

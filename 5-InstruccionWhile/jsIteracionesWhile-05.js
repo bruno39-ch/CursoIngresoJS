@@ -5,8 +5,18 @@ function mostrar()
 {
 	var sexoIngresado;
 	sexoIngresado = prompt("ingrese f ó m .");
-
-
-
-	txtIdSexo.value=sexoIngresado;
-}//FIN DE LA FUNCIÓN
+	
+	while(sexoIngresado != "f" || sexoIngresado != "m"){
+		
+		if(sexoIngresado == "f"){
+			txtIdSexo.value = "Femenino";
+			break;
+		}else{
+			if(sexoIngresado == "m"){
+				txtIdSexo.value = "Masculino";
+				break;
+			}
+		}
+		sexoIngresado = prompt("ingrese f ó m .");
+	}
+}
