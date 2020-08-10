@@ -16,16 +16,16 @@ function mostrar()
 
 	
 	var cantidadBarbijos;
-	var contadorBarbijos;
+	var contadorBarbijos=0;
 	var cantidadJabon;
-	var contadorJabon;
+	var contadorJabon=0;
 	var cantidadAlcohol;
-	var contadorAlcochol;
+	var contadorAlcochol=0;
 	var masUnidades;
 	var promedio;
 
 	var contador=0;
-	while(contador < 2){
+	while(contador < 3){
 		contador++;
 		do{
 			productos = prompt("Ingrese el producto");
@@ -55,13 +55,15 @@ function mostrar()
 				fabricanteAlcohol = fabricante;
 			}
 		}
+
+		
 		switch(productos){
 			case "barbijo":
 				cantidadBarbijos += cantidad;
 				contadorBarbijos++;
 				break;
 			case "jabon":
-				cantidadJabon += cantidad;
+				cantidadJabon = cantidadJabon + cantidad;
 				contadorJabon++;
 				break;
 			case "alcohol":
@@ -69,20 +71,27 @@ function mostrar()
 				contadorAlcochol++;
 				break;
 		}
-
 	}
-	if(cantidadBarbijos > cantidadJabon && cantidadBarbijos > cantidadAlcohol){
+	if(cantidadBarbijos > cantidadJabon &&
+		 cantidadBarbijos > cantidadAlcohol){
+		alert("Ingreso a barbijos");
 		masUnidades = cantidadBarbijos;
 		promedio = masUnidades / contadorBarbijos;
 	}else{
 		if(cantidadJabon > cantidadAlcohol){
+			alert("Ingreso a alcohol");
 			masUnidades = cantidadJabon;
 			promedio = masUnidades / contadorJabon;
 		}else{
+			alert("Ingreso a alcohol");
 			masUnidades = cantidadAlcohol;
 			promedio = masUnidades / contadorAlcohol;	
 		}
 	}
+	
+	alert("cantidad barbijos "+cantidadBarbijos+
+	"\ncantidad jabon "+cantidadJabon+
+	"\ncantidad alcohol "+cantidadAlcohol);
 	document.write("Alcohol mas barato "+fabricanteAlcohol+
 	" cantidad "+cantidadDeAlcohol+" precio "+masBaratoAlcohol);
 	document.write("<br>Unidades mas compradas: "+masUnidades+" y su promedio es");

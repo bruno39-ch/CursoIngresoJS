@@ -89,6 +89,7 @@ function mostrar()
 	if(acumuladorCantidadesAlcohol > acumuladorCantidadesBarbijo
 		&& acumuladorCantidadesAlcohol > acumuladorCantidadesJabon){
 			//el mayor es alcohol
+			
 			promedioPorCompra = acumuladorCantidadesAlcohol / contadorPorCompraAlcohol++; ;
 	}else if(acumuladorCantidadesBarbijo > acumuladorCantidadesJabon){
 		//el mayor es barbijo
